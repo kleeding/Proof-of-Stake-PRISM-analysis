@@ -1,0 +1,81 @@
+// PROPERTY FORMULAE CONSTANT //
+// Execution length constant
+const int T = 100;
+
+// Probability that agent 1 is elected
+// during the first election
+P=? [ X selected1=1 ]
+
+// Probability that agent 1 has a block finalised
+// during the first possible moment
+P=? [ X X winner1=1 ]
+
+// Is it certain that a conflict will eventually occurs
+P>=1 [ F "conflict" ]
+
+// Probability of reaching a failure state
+// within T steps
+P=? [ F<=(3*g)*T "failure" ]
+
+// Is it certain that a failure state will be reached
+P<=0 [ F "failure" ]
+
+// The expected number of sub-slots
+// in (3*g)*T steps of the protocol
+R{"subslots"}=? [ C<=(3*g)*T ]
+
+// The expected number of slots
+// in (3*g)*T steps of the protocol
+R{"slots"}=? [ C<=(3*g)*T ]
+
+// Probability of a conflict occurring
+// during the first election
+P=? [ X "conflict" ]
+
+// Probability that a conflict occurs
+// within (3*g)*T steps
+P=? [ F<=(3*g)*T "conflict" ]
+
+// The expected total conflicts that occur
+// during (3*g)*T steps of the protocol
+R{"conflicts"}=? [ C<=(3*g)*T ]
+
+// The expected number of eligible stakers
+// during (3*g)*T steps of the protocol
+R{"eligibility"}=? [ C<=(3*g)*T ]
+
+// The expected age of stake used to produce blocks
+// during (3*g)*T steps of the protocol
+R{"production_age"}=? [ C<=(3*g)*T ]
+
+// The expected times agent 3 is elected
+// during (3*g)*T steps of the protocol
+R{"agent_elected"}=? [ C<=(3*g)*T ]
+
+// The expected total agents elected
+// during (3*g)*T steps of the protocol
+R{"total_elected"}=? [ C<=(3*g)*T ]
+
+// The expected times agent 3 produced blocks
+// during (3*g)*T steps of the protocol
+R{"agent_produced"}=? [ C<=(3*g)*T ]
+
+// The expected total blocks produced in
+// T steps of the protocol
+R{"total_produced"}=? [ C<=(3*g)*T ]
+
+// The expected rewards given to agent 3
+// during (3*g)*T steps of the protocol
+R{"agent_rewards"}=? [ C<=(3*g)*T ]
+
+// The expected total rewards given
+// during (3*g)*T steps of the protocol
+R{"total_rewards"}=? [ C<=(3*g)*T ]
+
+// The expected coinage used to produce a block
+// during (3*g)*T steps of the protocol
+R{"production_age"}=? [ C<=(3*g)*T ]
+
+// The expected coinage used for agent A3 to produce a block
+// during (3*g)*T steps of the protocol
+R{"agent_production_age"}=? [ C<=(3*g)*T ]
