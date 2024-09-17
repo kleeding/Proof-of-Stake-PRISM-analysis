@@ -1,0 +1,26 @@
+// Is the probability both performers eventually move n spaces forward 0.5 or greater
+P>=0.5 [ F "success" ]
+
+// Is the probability that the pantomime horse will eventually trip 0.5 or greater
+P>=0.5 [ F "tripped" ]
+
+// Will the pantomime horse eventually reach one of the three end states
+P>=1 [ F "success"|"tripped"|"ripped" ]
+
+// The probability it will reach the success state
+P=? [ F "success" ]
+
+// The probability that the pantomime never finishes successfully
+P=? [ G !"success" ]
+
+The probability that one of the end states is reached and never moved from
+P=? [ F (G "success"|"tripped"|"ripped") ]
+
+// The expected time for the pantomime horse to reach an end state
+R{"time"}=? [ F ("success"|"tripped"|"ripped") ]
+
+// The expected time for the pantomime horse to reach an end state (making use of transition and not state rewards)
+R{"time"}=? [ C ]
+
+// Expected number of forward actions taken until the protocol ends
+R{"forward"}=? [ C ]
