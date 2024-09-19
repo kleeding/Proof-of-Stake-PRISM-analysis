@@ -1,0 +1,46 @@
+// PROPERTY FORMULAE CONSTANT //
+// Execution length constant
+const int T = 100;
+
+// Probability that agent 3 is elected as potential 
+// leader during the first round
+P=? [ G=maxW+1 proposal3>0 ]
+
+// Probability that agent 3 is elected as leader 
+// during the first round
+P=? [ G=maxW+2 leader=3 ]
+
+// Probability that no agent is elected as 
+// potential leader during the first round
+P=? [ G=maxW+1 proposals=0 ]
+
+// Probability that there are some potential leaders
+// elected during the first round
+P=? [ G=maxW+1 proposals>0 ]
+
+// The expected number of rounds
+R{"rounds"}=? [ C<=T*(maxW+3) ]
+
+// The expected number of potential leaders for agent 3
+R{"agent_proposals"}=? [ C<=T*(maxW+3) ]
+
+// The expected total potential leaders
+R{"total_proposals"}=? [ C<=T*(maxW+3) ]
+
+// The expected times agent 3 is successfully elected
+R{"agent_elected"}=? [ C<=T*(maxW+3) ]
+
+// The expected total agents successfully elected
+R{"total_elected"}=? [ C<=T*(maxW+3) ]
+
+// The expected number of blocks produced by agent 3
+R{"agent_blocks"}=? [ C<=T*(maxW+3) ]
+
+// The expected total blocks produced by all agents
+R{"total_blocks"}=? [ C<=T*(maxW+3) ]
+
+// the expected rewards gained by agent 3
+R{"agent_rewards"}=? [ C<=T*(maxW+3) ]
+
+// The expected total rewards gained by all agents
+R{"total_rewards"}=? [ C<=T*(maxW+3) ]
