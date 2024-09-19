@@ -6,7 +6,7 @@ Three models are described:
 - A `/sybil.pm` model describing two agents in which the 2nd performs a Sybil strategy, splitting their stake between two new agents.
 - A `/pooling.pm` model describing three agents in which the 2nd and 3rd perform a pooling strategy, merging their stake into a single agent.
 
-These are analysed against a set of properties described in `/PRISM/property.pctl`.
+These are analysed against a set of properties described in `/Proof-of-Stake-PRISM-analysis/Peercoin/property.pctl`.
 
 # Running models in PRISM
 - Download and install PRISM: https://www.prismmodelchecker.org/download.php
