@@ -24,7 +24,7 @@ const int w2 = floor(r2*totalW+0.5);
 const int w3a = floor(r3a*totalW+0.5);
 const int w3b = floor(r3b*totalW+0.5);
 
-// proposal count aim
+// proposal count goal
 const int tau;
 
 // probability per sub-user
