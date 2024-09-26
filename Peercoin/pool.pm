@@ -29,7 +29,7 @@ formula eligible = (age1+age_update>=minAge)? true : false;
 formula solutions = solution1+solution2a+solution2b;
 
 // Total number of agents chosen as block proposer
-formula winners = winner1+winner2a+winner2b;
+formula winners = winner1+winner4;
 
 // Highest coinage from agents with solutions found
 formula maxCoinage = max(r1*age1*solution1, r4*age4*solution4);
@@ -57,9 +57,9 @@ module agent1
 	winner1 : [0..1] init 0;
 
 	// Solution search
-	[election] eligible -> p:(solution1'=1)&(age1'=min(age1+agechange,ageLimit)) 
-			   + 1-p:(age1'=min(age1+agechange,ageLimit));
-	[election] !eligible -> (age1'=age1+agechange);
+	[election] eligible -> p:(solution1'=1)&(age1'=min(age1+age_update,ageLimit)) 
+			   + 1-p:(age1'=min(age1+age_update,ageLimit));
+	[election] !eligible -> (age1'=age1+age_update);
 
 	// Highest coinage selection rule
 	[consensus1] solution1=1&(r1*age1)=maxCoinage -> (solution1'=0)&(winner1'=1);
