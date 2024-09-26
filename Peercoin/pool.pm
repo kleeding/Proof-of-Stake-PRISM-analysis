@@ -26,7 +26,7 @@ formula p = r1/g * min(age1+age_update,maxAge)/(maxAge);
 formula eligible = (age1+age_update>=minAge)? true : false;
 
 // Total number of solutions found during a step
-formula solutions = solution1+solution2a+solution2b;
+formula solutions = solution1+solution4;
 
 // Total number of agents chosen as block proposer
 formula winners = winner1+winner4;
