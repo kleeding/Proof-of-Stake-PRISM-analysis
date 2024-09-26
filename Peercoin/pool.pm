@@ -39,7 +39,7 @@ formula eligible_stakers = (age1+1>=minAge? 1:0)+(age4+1>=minAge? 1:0);
 
 module stepper
 
-	step : [1..3*g] init #1;
+	step : [1..3*g] init 1;
 
 	[election] mod(step,3)=1 -> (step'=step+1);
 	[consensus0] mod(step,3)=2 -> (step'=step+1);
