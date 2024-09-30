@@ -34,7 +34,7 @@ module back
     // back moves forward with probability 'pb' 
     // and does nothing with probability '1-pb'
     [forward] dif>=0&dif<2&dist_b<n -> pb : (dist_b'=dist_b+1) 
-                                    + 1-pb : true;
+                                   + 1-pb : true;
     //[step] dist_b=n&back_action=1 -> (back_action'=0);
 
     // back perform wags tail
