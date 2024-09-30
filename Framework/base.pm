@@ -36,7 +36,7 @@ module agent1
 
     // Local election mechanism
 	[election] elected=0 -> p  :(elected1'=1)&(produced1'=0) 
-			                + 1-p:(elected1'=0)&(produced1'=0);
+			    + 1-p:(elected1'=0)&(produced1'=0);
 	
     // Random selection rule
 	[consensus1] elected>0&elected1=1 -> (produced1'=1)&(elected1'=0);
@@ -45,7 +45,7 @@ module agent1
 
     // Highest stake selection rule
     //	[consensus1] elected>0&elected1=1&s1=maxS -> (produced1'=1)
-    //                                      &(elected1'=0);
+    //                                              &(elected1'=0);
     //	[consensus2] elected>0&elected2=1&s2=maxS -> (elected1'=0);
     //	[consensus3] elected>0&elected3=1&s3=maxS -> (elected1'=0);
 	
