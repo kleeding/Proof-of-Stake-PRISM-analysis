@@ -1,0 +1,104 @@
+// Number of steps the protocol is being analysed for
+const int T;
+
+// Probability that agent 1 is elected
+// during the first election
+P=? [ X elected1=1 ]
+
+// Probability that agent 1 has a block finalised
+// during the first possible moment
+P=? [ X X produced1=1 ]
+
+// Is it certain that a conflict will eventually occurs
+P>=1 [ F "conflict" ]
+
+// Probability that a conflict occurs
+// within T steps
+P=? [ F<=T "conflict" ]
+
+// Probability of a conflict occurring
+// during the first election
+P=? [ X "conflict" ]
+
+// Probability of reaching a failure state
+// within T steps
+P=? [ F<=T "failure" ]
+
+// Is it certain that a failure state will be reached
+P<=0 [ F "failure" ]
+
+// The expected number of sub-slots
+// in T steps of the protocol
+R{"subslots"}=? [ C<=T ]
+
+// The expected number of slots
+// in T steps of the protocol
+R{"slots"}=? [ C<=T ]
+
+// The expected total blocks produced in
+// T steps of the protocol
+R{"total_produced"}=? [ C<=T ]
+
+// The expected ratio of blocks produced
+// against the expected slots that occurred
+// during T steps of the protocol
+R{"total_produced"}=? [ C<=T ]/R{"slots"}=? [ C<=T ]
+
+// The expected total conflicts that occur
+// during T steps of the protocol
+R{"conflicts"}=? [ C<=T ]
+
+// The expected ratio of conflicts that occur
+// against the total blocks that occurred
+// during T steps of the protocol
+R{"conflicts"}=? [ C<=T ]/R{"total_produced"}=? [ C<=T ]
+
+// The expected total agents elected
+// during T steps of the protocol
+R{"total_elected"}=? [ C<=T ]
+
+// The expected times agent 3 is elected
+// during T steps of the protocol
+R{"A3_elected"}=? [ C<=T ]
+
+// The expected ratio of times agent 3 was elected
+// against the expected slots
+// during T steps of the protocol
+R{"A3_elected"}=? [ C<=T ]/R{"slots"}=? [ C<=T ]
+
+// The expected ratio of times agent 3 was elected
+// against the expected slots, against their stake ratio
+// during T steps of the protocol
+R{"A3_elected"}=? [ C<=T ]/R{"slots"}=? [ C<=T ]/(s1/tS)
+
+// The expected times agent 3 produced blocks
+// during T steps of the protocol
+R{"A3_produced"}=? [ C<=T ]
+
+// The expected ratio of blocks produced by agent 3
+// against the total blocks produced
+// during T steps of the protocol
+R{"A3_produced"}=? [ C<=T ]/R{"total_produced"}=? [ C<=T ]
+
+// The expected ratio of blocks produced by agent 3
+// against the total blocks produced, against their stake ratio
+// during T steps of the protocol
+R{"A3_produced"}=? [ C<=T ]/R{"total_produced"}=? [ C<=T ]/(s1/tS)
+
+// The expected total rewards given
+// during T steps of the protocol
+R{"total_rewards"}=? [ C<=T ]
+
+// The expected rewards given to agent 3
+// during T steps of the protocol
+R{"A3_rewards"}=? [ C<=T ]
+
+// The expected ratio of rewards given to agent 3
+// against the total rewards given
+// during T steps of the protocol
+R{"A3_rewards"}=? [ C<=T ]/R{"total_rewards"}=? [ C<=T ]
+
+// The expected ratio of rewards given to agent 3
+// against the total rewards given, against their stake ratio
+// during T steps of the protocol
+R{"A3_rewards"}=? [ C<=T ]/R{"total_rewards"}=? [ C<=T ]/(s1/tS)
