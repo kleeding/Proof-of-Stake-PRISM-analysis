@@ -1,0 +1,27 @@
+// Length of an epoch
+const int T=100;
+// Porbability that agent 1 is elected as leader 
+// during the first step
+P=? [ X leader1=1 ]
+// Probability that agent 1 is chosen as block producer
+// in the second step
+P=? [ X X finalised1=1 ]
+// Is the probability greater than zero that there will
+// be a leader selected in the first step
+P>0 [ X leader!=0 ]
+// The expected number of active slots
+R{"active_slots"}=? [ C<=T*3*g ]
+// The expected number of empty slots
+R{"empty_slots"}=? [ C<=T*3*g ]
+// The expected times agent 3 is successfully elected
+R{"agent_elected"}=?[ C<=T*3*g ]
+// The expected total agents successfully elected
+R{"total_elected"}=?[ C<=T*3*g ]
+// The expected number of blocks produced by agent 3
+R{"agent_blocks"}=?[ C<=T*3*g ]
+// The expected total blocks produced by all agents
+R{"total_blocks"}=?[ C<=T*3*g ]
+// The expected trewards gained by agent 3
+R{"agent_rewards"}=?[ C<=T*3*g ]
+// The expected total rewards gained by all agents
+R{"total_rewards"}=?[ C<=T*3*g ]
