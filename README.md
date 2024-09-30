@@ -4,7 +4,7 @@ This respository contains the collection of models described and analysed in my 
 
 Each folder contains:
 - One or more `/<name>.pm` files describing the model.
-- A `/properties.pctl` file describing the properties in PRISM property specification language.
+- A `/properties.pctl` file describing the properties in PRISMs property specification language.
 
 # Running models in PRISM
 - Download and install PRISM: https://www.prismmodelchecker.org/download.php
