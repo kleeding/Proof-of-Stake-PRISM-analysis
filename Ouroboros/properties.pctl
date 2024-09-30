@@ -1,0 +1,22 @@
+// Porbability that agent 1 is elected as leader 
+// during the first step
+P=? [ X leader=1 ]
+// Probability that agent 1 performs and action in the
+// second step
+P=? [ X X action1=1 ]
+// Probability that there are leaders selected in the first step
+P=? [ X leader!=0 ]
+// The expected number of slots
+R{"slots"}=? [ C<=T*3 ]
+// The expected times agent 3 is successfully elected
+R{"agent_elected"}=?[ C<=T*3*g ]
+// The expected total agents successfully elected
+R{"total_elected"}=?[ C<=T*3*g ]
+// The expected number of blocks produced by agent 3
+R{"agent_blocks"}=?[ C<=T*3*g ]
+// The expected total blocks produced by all agents
+R{"total_blocks"}=?[ C<=T*3*g ]
+// The expected trewards gained by agent 3
+R{"agent_rewards"}=?[ C<=T*3*g ]
+// The expected total rewards gained by all agents
+R{"total_rewards"}=?[ C<=T*3*g ]
